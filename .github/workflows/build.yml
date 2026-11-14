@@ -15,9 +15,6 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Android lisanslarini kabul et
-        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
-
       - uses: gradle/actions/setup-gradle@v6
         with:
           gradle-version: 8.10.2
@@ -32,4 +29,4 @@ jobs:
       - uses: actions/upload-artifact@v6
         with:
           name: FilmDownloader-APK
-          path: Android/app/build/outputs/apk/debug/app-debug.apk: 
+          path: Android/app/build/outputs/apk/debug/app-debug.apk
